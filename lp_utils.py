@@ -66,3 +66,8 @@ def decode_state(state: str, fluent_map: list) -> FluentState:
         else:
             fs.neg.append(fluent_map[idx])
     return fs
+
+
+def setup_child_parent_relation(child, parent):
+    child.parents.add(parent)
+    parent.children.add(child)

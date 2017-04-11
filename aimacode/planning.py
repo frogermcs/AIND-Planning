@@ -59,6 +59,9 @@ class Action:
     def __call__(self, kb, args):
         return self.act(kb, args)
 
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
+
     def substitute(self, e, args):
         """Replaces variables in expression with their respective Propostional symbol"""
         new_args = list(e.args)
